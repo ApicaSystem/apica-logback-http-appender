@@ -2,6 +2,7 @@ package tw.kewang.logback.appender;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Base64;
 
 /**
  * Provide basic http authentication.
@@ -26,7 +27,7 @@ public class HttpAuthenticationAppender extends HttpAppenderAbstract {
 		}
 
 		String userPassword = authentication.getUsername() + SEPARATOR_BASIC_AUTHENTICATION + authentication.getPassword();
-		encondedUserPassword = new sun.misc.BASE64Encoder().encode(userPassword.getBytes());
+		encondedUserPassword = new String(Base64.getEncoder().encode(userPassword.getBytes()));
 
 		openConnection();
 		addInfo("Using Basic Authentication");

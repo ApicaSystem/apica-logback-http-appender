@@ -4,7 +4,7 @@
 
     <groupId>tw.kewang</groupId>
     <artifactId>logback-http-appender</artifactId>
-    <version>0.2.0-SNAPSHOT</version>
+    <version>0.2.0-apica-3</version>
     <packaging>jar</packaging>
 
     <name>logback-http-appender</name>
@@ -34,9 +34,29 @@
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
-            <version>20160212</version>
+            <version>20210307</version>
         </dependency>
     </dependencies>
+
+    <distributionManagement>
+      <repository>
+        <id>apica-artifacts</id>
+        <name>a0pbpgwdghsu9-artifactory-primary-0-releases</name>
+        <url>https://apica.jfrog.io/artifactory/backend-services-releases</url>
+      </repository>
+      <snapshotRepository>
+        <id>snapshots</id>
+        <name>a0pbpgwdghsu9-artifactory-primary-0-snapshots</name>
+        <url>https://apica.jfrog.io/artifactory/backend-services-snapshots</url>
+      </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+      <repository>
+        <id>backend-services-releases</id>
+        <url>https://apica.jfrog.io/artifactory/backend-services-releases/</url>
+      </repository>
+    </repositories>
     
     <build>
 	    <plugins>
