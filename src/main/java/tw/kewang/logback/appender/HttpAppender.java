@@ -1,16 +1,13 @@
 package tw.kewang.logback.appender;
 
+import ch.qos.logback.classic.spi.ILoggingEvent;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.Charset;
-
+import java.util.Iterator;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONObject;
-
-import ch.qos.logback.classic.spi.ILoggingEvent;
-import ch.qos.logback.core.Layout;
-import ch.qos.logback.core.encoder.Encoder;
 
 public class HttpAppender extends HttpAppenderAbstract {
 
@@ -96,7 +93,9 @@ public class HttpAppender extends HttpAppenderAbstract {
 		}
 
 		JSONObject jObj = new JSONObject(headers);
-		for (String key : jObj.keySet()) {
+		Iterator<String> keysIterator = jObj.keys();
+		while (keysIterator.hasNext()) {
+			String key = keysIterator.next();
 			String value = (String) jObj.get(key);
 			conn.setRequestProperty(key, value);
 		}

@@ -4,7 +4,7 @@
 
     <groupId>tw.kewang</groupId>
     <artifactId>logback-http-appender</artifactId>
-    <version>0.2.0-apica-0</version>
+    <version>0.2.0-apica-3</version>
     <packaging>jar</packaging>
 
     <name>logback-http-appender</name>
@@ -34,7 +34,7 @@
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
-            <version>20160212</version>
+            <version>20210307</version>
         </dependency>
     </dependencies>
 
